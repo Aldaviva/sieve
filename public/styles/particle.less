@@ -1,0 +1,90 @@
+.particleType(@width, @height, @color, @cols){
+	.particle {
+		margin-bottom : @height/2;
+		margin-left   : (@page_width - (@cols * @width)) / (@cols - 1);
+		width         : @width;
+
+		&:nth-child(@{cols}n+1){
+			margin-left: 0;
+		}
+
+		.box {
+			border-color : @color;
+			height       : @height;
+			margin       : 0 auto;
+		}
+
+		.completion {
+			background: @color;
+		}
+	}
+}
+
+.sieve {
+	.particles {
+		margin-top : 60px;
+		overflow   : hidden;
+	}
+
+	.particle {
+		float: left;
+
+		&.accepted {
+			.box .checkmark {
+				display: block;
+			}
+		}
+
+		.box {
+			.border-radius(15px);
+			border-style : solid;
+			border-width : 5px;
+			position     : relative;
+
+			.checkmark {
+				background-position : 50% 50%;
+				background-repeat   : no-repeat;
+				display             : none;
+				height              : inherit;
+				position            : relative;
+				z-index             : 2;
+			}
+
+			.completion {
+				bottom   : 0;
+				left     : 0;
+				position : absolute;
+				right    : 0;
+				z-index  : 1;
+			}
+		}
+
+		.name {
+			font       : 20px "Geogrotesque";
+			margin-top : 22px;
+			opacity    : 0.40;
+			text-align : center;
+		}
+	}
+
+	.boulders {
+		.particleType(145px, 125px, @orange, 3);
+		.checkmark {
+			background-image: url('../images/checkmark-large.png');
+		}
+	}
+
+	.rocks {
+		.particleType(120px, 100px, @blue, 4);
+		.checkmark {
+			background-image: url('../images/checkmark-medium.png');
+		}
+	}
+
+	.pebbles {
+		.particleType(100px, 85px, @purple, 5);
+		.checkmark {
+			background-image: url('../images/checkmark-small.png');
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"httpServer": {
+		"port": 8080
+	},
+	"remote": {
+		"jira": {
+			"baseUrl": "http://jira.bluejeansnet.com:8080/",
+			"username": "denimcores",
+			"password": ""
+		}
+	}
+}
