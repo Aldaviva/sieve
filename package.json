@@ -3,14 +3,13 @@
 	"version": "0.0.1",
 	"author": "Ben Hutchison <ben@bluejeans.com>",
 	"dependencies": {
-		"bunyan"          : "0.22.1",
-		"less-middleware" : "0.1.15",
-		"lodash"          : "2.4.1",
-		"moment"          : "2.5.1",
-		"panic"           : "0.2.1",
-		"q"               : "1.0.1",
-		"request"         : "2.34.0",
-		"restify"         : "2.6.3",
-		"verror"          : "1.4.0"
+		"bunyan"              : "0.22.1",
+		"less-middleware"     : "0.1.15",
+		"lodash"              : "2.4.1",
+		"moment"              : "2.5.1",
+		"panic"               : "0.2.1",
+		"pr-request2"         : "0.2.0",
+		"q"                   : "1.0.1",
+		"restify"             : "2.6.3"
 	}
 }

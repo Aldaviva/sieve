@@ -39,7 +39,7 @@
 
 				var particles = _.sortBy(clastGroups[clastSize], function(particle){
 					//isAccepted desc, completion desc, name asc
-					return '' + Number(!particle.get('isAccepted')) + ((1-particle.get('completion'))/10).toFixed(2) + particle.get('name');
+					return '' + Number(!particle.get('isAccepted')) + ((1-particle.get('completion'))/10).toFixed(4) + particle.get('name');
 				});
 
 				if(particles.length){

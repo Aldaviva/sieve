@@ -1,4 +1,6 @@
-.particleType(@width, @height, @color, @cols, @borderRadius, @checkmarkImgModifier){
+.particleType(@width, @color, @cols, @borderRadius, @checkmarkImgModifier){
+	@height: @width / 1.17;
+
 	.particle {
 		margin-bottom : @height/2.5;
 		margin-left   : (@page_width - (@cols * @width)) / (@cols - 1);
@@ -64,22 +66,25 @@
 		}
 
 		.name {
-			font       : 20px "Geogrotesque";
+			font       : 17px "Geogrotesque";
 			margin-top : 22px;
 			opacity    : 0.40;
 			text-align : center;
+			height     : 42px;
+			overflow   : hidden;
+			/*.ellipsis();*/
 		}
 	}
 
 	.boulders {
-		.particleType(145px, 125px, @orange, 3, 17px, 'large');
+		.particleType(145px, @orange, 3, 17px, 'large');
 	}
 
 	.rocks {
-		.particleType(120px, 100px, @blue, 4, 15px, 'medium');
+		.particleType(120px, @blue, 4, 15px, 'medium');
 	}
 
 	.pebbles {
-		.particleType(100px, 85px, @purple, 5, 13px, 'small');
+		.particleType(100px, @purple, 5, 13px, 'small');
 	}
 }
