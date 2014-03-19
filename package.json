@@ -1,7 +1,7 @@
 {
 	"name": "sieve",
 	"version": "0.0.1",
-	"author": "Ben Hutchison <ben@bluejeansnet.com>",
+	"author": "Ben Hutchison <ben@bluejeans.com>",
 	"dependencies": {
 		"bunyan"          : "0.22.1",
 		"less-middleware" : "0.1.15",

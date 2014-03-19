@@ -1,6 +1,6 @@
-.particleType(@width, @height, @color, @cols){
+.particleType(@width, @height, @color, @cols, @borderRadius, @checkmarkImgModifier){
 	.particle {
-		margin-bottom : @height/2;
+		margin-bottom : @height/2.5;
 		margin-left   : (@page_width - (@cols * @width)) / (@cols - 1);
 		width         : @width;
 
@@ -9,6 +9,7 @@
 		}
 
 		.box {
+			.border-radius(@borderRadius);
 			border-color : @color;
 			height       : @height;
 			margin       : 0 auto;
@@ -17,12 +18,16 @@
 		.completion {
 			background: @color;
 		}
+
+		.checkmark {
+			background-image: url("../images/checkmark-@{checkmarkImgModifier}.png");
+		}
 	}
 }
 
 .sieve {
 	.particles {
-		margin-top : 60px;
+		margin-top : 50px;
 		overflow   : hidden;
 	}
 
@@ -36,7 +41,6 @@
 		}
 
 		.box {
-			.border-radius(15px);
 			border-style : solid;
 			border-width : 5px;
 			position     : relative;
@@ -68,23 +72,14 @@
 	}
 
 	.boulders {
-		.particleType(145px, 125px, @orange, 3);
-		.checkmark {
-			background-image: url('../images/checkmark-large.png');
-		}
+		.particleType(145px, 125px, @orange, 3, 17px, 'large');
 	}
 
 	.rocks {
-		.particleType(120px, 100px, @blue, 4);
-		.checkmark {
-			background-image: url('../images/checkmark-medium.png');
-		}
+		.particleType(120px, 100px, @blue, 4, 15px, 'medium');
 	}
 
 	.pebbles {
-		.particleType(100px, 85px, @purple, 5);
-		.checkmark {
-			background-image: url('../images/checkmark-small.png');
-		}
+		.particleType(100px, 85px, @purple, 5, 13px, 'small');
 	}
 }
