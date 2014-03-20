@@ -8,7 +8,7 @@
 		"lodash"              : "2.4.1",
 		"moment"              : "2.5.1",
 		"panic"               : "0.2.1",
-		"pr-request2"         : "0.2.0",
+		"pr-request2"         : "git://github.com/aldaviva/pr-request2.git#e714437d0abc58d645028231f095196c4c1ae911",
 		"q"                   : "1.0.1",
 		"restify"             : "2.6.3"
 	}
