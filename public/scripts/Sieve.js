@@ -15,6 +15,8 @@
 
 		sieveView.render();
 		currentRelease.fetch();
+
+		window.setInterval(window.location.refresh, 5*60*1000);
 	};
 
 	window.Sieve = Sieve;
