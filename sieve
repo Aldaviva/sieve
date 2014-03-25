@@ -121,6 +121,7 @@ do_start()
 	# Add code here, if necessary, that waits for the process to be ready
 	# to handle requests from services started subsequently which depend
 	# on this one.  As a last resort, sleep for some time.
+	sleep 0.1 #allow pid file to be created
 	log_progress_msg "started with pid `cat $PIDFILE`"
 	log_end_msg 0
 }
