@@ -11,8 +11,10 @@
 	 */
 	var ParticleModel = Backbone.Model.extend({
 		get: function(key){
-			if(key === 'completion'){
-				return this.get('completedTasks') / (this.get('totalTasks') || 1);
+			if(key === 'codeCompletion'){
+				return this.get('codedTasks') / (this.get('totalTasks') || 1);
+			} else if(key === 'testCompletion'){
+				return this.get('testedTasks') / (this.get('totalTasks') || 1);
 			} else {
 				return Backbone.Model.prototype.get.apply(this, arguments);
 			}

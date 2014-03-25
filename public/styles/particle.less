@@ -19,6 +19,10 @@
 
 		.completion {
 			background: @color;
+
+			&.code {
+				opacity: 0.5;
+			}
 		}
 
 		.checkmark {
@@ -36,9 +40,13 @@
 	.particle {
 		float: left;
 
-		&.accepted {
-			.box .checkmark {
+		&.accepted .box {
+			.checkmark {
 				display: block;
+			}
+
+			.completion.test {
+				height: 100% !important; //overrides style attribute from ParticleView
 			}
 		}
 
@@ -62,6 +70,10 @@
 				position : absolute;
 				right    : 0;
 				z-index  : 1;
+
+				&.test {
+					z-index: 2;
+				}
 			}
 		}
 
