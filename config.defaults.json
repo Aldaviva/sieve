@@ -8,5 +8,8 @@
 			"username": "denimcores",
 			"password": ""
 		}
+	},
+	"cache": {
+		"ttl": 240000
 	}
 }

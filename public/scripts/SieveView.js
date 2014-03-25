@@ -33,12 +33,13 @@
 
 		renderParticles: function(){
 			this.$('section').remove();
+
 			var clastGroups = this.collection.groupBy('clastSize');
 			var sectionEls = _.map(['boulder', 'rock', 'pebble'], function(clastSize){
 				var pluralClastSize = PLURAL_CLASTSIZES[clastSize];
 
 				var particles = _.sortBy(clastGroups[clastSize], function(particle){
-					//isAccepted desc, completion desc, name asc
+					//sort by isAccepted desc, completion desc, name asc
 					return '' + Number(!particle.get('isAccepted')) + ((1-particle.get('completion'))/10).toFixed(4) + particle.get('name');
 				});
 
@@ -54,7 +55,9 @@
 					sectionEl
 						.append($('<header>')
 							.append($("<h1>").text(pluralClastSize))
-							.append($("<div>", { "class": "dueDate" }).text("Due "+formattedDueDate)))
+							.append($("<div>", { "class": "dueDate "+(dueDate.isBefore() ? 'past' : 'future') })
+								.text(formattedDueDate)
+								.attr('title', dueDate.format())))
 						.append($('<div>', { "class": "particles" }))
 
 					sectionEl.find('.particles').append(particleEls);

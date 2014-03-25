@@ -22,6 +22,14 @@
 			.dueDate {
 				font    : italic 16px "Geogrotesque";
 				opacity : 0.50;
+
+				&.future:before {
+					content: 'Due ';
+				}
+
+				&.past:before {
+					content: 'Were due ';
+				}
 			}
 		}
 	}

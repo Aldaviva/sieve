@@ -20,6 +20,7 @@
 			this.$('.completion').css('height', this.model.get('completion')*100+'%');
 			this.$('.checkmark').toggle(!!this.model.get('isAccepted'));
 			this.$('.name').text(this.model.get('name'));
+			this.$el.attr('title', this.model.get('name')+'\n'+this.model.get('completedTasks')+'/'+this.model.get('totalTasks')+' resolved or closed' + (this.model.get('isAccepted') ? '\nAccepted' : ''));
 
 			return this.el;
 		}
