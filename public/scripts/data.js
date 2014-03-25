@@ -1,6 +1,6 @@
 (function(){
 	
-	var API_ROOT = "/cgi-bin/";
+	var API_ROOT = "cgi-bin/";
 
 	var ReleaseModel = Backbone.Model.extend({
 		urlRoot: API_ROOT+'releases'
