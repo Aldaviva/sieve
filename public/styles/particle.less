@@ -86,6 +86,13 @@
 			overflow   : hidden;
 			/*.ellipsis();*/
 		}
+
+	}
+
+	&.small .particle .name {
+		font-size: 14px;
+		margin-top: 16px;
+		height     : 40px;
 	}
 
 	.boulders {
@@ -98,5 +105,17 @@
 
 	.pebbles {
 		.particleType(100px, @purple, 5, 13px, 'small');
+	}
+
+	&.small .boulders {
+		.particleType(120px, @orange, 4, 15px, 'medium');
+	}
+
+	&.small .rocks {
+		.particleType(100px, @blue, 5, 13px, 'small');
+	}
+
+	&.small .pebbles {
+		.particleType(70px, @purple, 6, 10px, 'small');
 	}
 }

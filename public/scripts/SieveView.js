@@ -1,5 +1,5 @@
 (function(){
-	
+
 	var PLURAL_CLASTSIZES = {
 		pebble: 'pebbles',
 		rock: 'rocks',
@@ -20,7 +20,7 @@
 				this.$el.append($('<div>', { "class": "release" }).append(
 					$('<span>', { "class": "name" })));
 			}
-			
+
 			this.renderParticles();
 			this.renderReleaseName();
 
@@ -33,6 +33,7 @@
 
 		renderParticles: function(){
 			this.$('section').remove();
+			this.$el.removeClass("small");
 
 			var clastGroups = this.collection.groupBy('clastSize');
 			var sectionEls = _.map(['boulder', 'rock', 'pebble'], function(clastSize){
@@ -69,6 +70,10 @@
 			}, this);
 
 			this.$el.prepend(sectionEls);
+
+			if (this.$el.height() > 1920) {
+				this.$el.addClass("small");
+			}
 		}
 	});
 
