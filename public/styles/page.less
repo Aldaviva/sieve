@@ -1,9 +1,26 @@
+body {
+	overflow: hidden;
+}
+
 .sieve {
 	margin      : 0 auto;
 	padding-top : 40px;
-	width       : @page_width;
+
+	@media (orientation: portrait){
+		width       : @page_width;
+	}
+
+	@media (orientation: landscape){
+		margin-left  : 30px;
+		margin-right : 30px;
+	}
 
 	section {
+		@media (orientation: landscape){
+			float : left;
+			width : 33%;
+		}
+
 		header {
 			border-top     : 5px solid rgba(0,0,0,0.15);
 			margin-top     : 75px;
@@ -11,12 +28,23 @@
 			text-align     : center;
 			text-transform : uppercase;
 
+			@media (orientation: landscape){
+				border-top   : none;
+				margin-left  : 66px;
+				margin-right : 66px;
+				margin-top   : 60px;
+			}
+
 			h1 {
 				background  : white;
 				font        : 65px "Brandon Grotesque";
 				line-height : 80px;
 				margin      : -40px auto 0;
 				width       : 440px;
+
+				@media (orientation: landscape){
+					width: 353px;
+				}
 			}
 
 			.dueDate {
@@ -34,12 +62,18 @@
 		}
 	}
 
-	&.small section header {
-		margin-top: 40px;
+	.small {
+		section header {
+			margin-top: 40px;
 
-		h1 {
-			font-size: 50px;
+			h1 {
+				font-size: 50px;
+			}
 		}
+	}
+
+	@media (orientation: landscape){
+		.small();
 	}
 
 	.release {

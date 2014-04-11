@@ -7,7 +7,14 @@
 		width         : @width;
 
 		&:nth-child(@{cols}n+1){
-			margin-left: 0;
+			@media (orientation: portrait){
+				margin-left: 0;
+			}
+		}
+
+		@media (orientation: landscape){
+			margin-left: (((1920px - (2*30px)) / 3 - (2 * @column_padding_landscape)) - (@width * @cols)) / (@cols + 1);
+			margin-bottom: @height / 4;
 		}
 
 		.box {
@@ -30,6 +37,11 @@
 	.particles {
 		margin-top : 50px;
 		overflow   : hidden;
+
+		@media (orientation: landscape){
+			padding: 0 @column_padding_landscape;
+			margin-top: 35px;
+		}
 	}
 
 	.particle {
@@ -80,18 +92,12 @@
 		.name {
 			font       : 20px "Geogrotesque";
 			margin-top : 22px;
-			opacity    : 0.40;
+			opacity    : 0.65;
 			text-align : center;
 			height     : 48px;
 			overflow   : hidden;
 		}
 
-	}
-
-	&.small .particle .name {
-		font-size  : 14px;
-		height     : 35px;
-		margin-top : 16px;
 	}
 
 	.boulders {
@@ -106,15 +112,47 @@
 		.particleType(100px, @purple, 5, 13px, 'small');
 	}
 
-	&.small .boulders {
-		.particleType(120px, @orange, 4, 15px, 'medium');
+	.smallNames(){
+		.particle .name {
+			font-size  : 14px;
+			height     : 35px;
+			margin-top : 16px;
+		}
 	}
 
-	&.small .rocks {
-		.particleType(100px, @blue, 5, 13px, 'small');
+	&.small { 
+		.smallNames();
+
+		.boulders {
+			.particleType(120px, @orange, 4, 15px, 'medium');
+		}
+
+		.rocks {
+			.particleType(100px, @blue, 5, 13px, 'small');
+		}
+
+		.pebbles {
+			.particleType(70px, @purple, 6, 10px, 'small');
+		}
 	}
 
-	&.small .pebbles {
-		.particleType(70px, @purple, 6, 10px, 'small');
+	@media (orientation: landscape){
+		.smallNames();
+
+		.particle .name {
+			margin-top: 12px;
+		}
+
+		.boulders {
+			.particleType(120px, @orange, 3, 15px, 'medium');
+		}
+
+		.rocks {
+			.particleType(100px, @blue, 4, 13px, 'small');
+		}
+
+		.pebbles {
+			.particleType(70px, @purple, 5, 10px, 'small');
+		}
 	}
 }
