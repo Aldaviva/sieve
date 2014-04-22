@@ -71,7 +71,7 @@
 
 			this.$el.prepend(sectionEls);
 
-			if (this.$el.height() > 1920) {
+			if (this.el.clientHeight > window.outerHeight) {
 				this.$el.addClass("small");
 			}
 		}
